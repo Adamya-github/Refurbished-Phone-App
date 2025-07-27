@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Phone Listings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>📱 Refurbished Phone Listings</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Phone</th>
+                <th>Condition</th>
+                <th>Price ($)</th>
+                <th>Stock</th>
+                <th>Directly Sold?</th>
+                <th colspan="3">Platforms</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for phone in phones %}
+            <tr>
+                <td>{{ phone.id }}</td>
+                <td>{{ phone.brand }} {{ phone.model }}</td>
+                <td>{{ phone.condition }}</td>
+                <td>{{ phone.price }}</td>
+                <td>{{ phone.stock }}</td>
+                <td>{{ phone.sold_directly }}</td>
+                {% for p in ['X', 'Y', 'Z'] %}
+                <td>
+                    <strong>{{ p }}</strong><br>
+                    Cond: {{ phone.platforms[p].mapped_condition }}<br>
+                    Profit: {{ phone.platforms[p].final_price }}<br>
+                    {% if phone.platforms[p].listed %}
+                        ✅ Listed
+                    {% else %}
+                        ❌ Not Listed
+                    {% endif %}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

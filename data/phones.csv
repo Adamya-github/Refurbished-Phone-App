@@ -1,0 +1,16 @@
+id,brand,model,condition,price,stock,sold_directly
+1,Samsung,Galaxy S21,Like New,300,2,False
+2,Apple,iPhone 12,Good,400,0,False
+3,Xiaomi,Redmi Note 10,Fair,150,5,True
+4,Realme,Narzo 50,Good,180,3,False
+5,OnePlus,8T,Like New,350,1,False
+6,Vivo,Y20,Fair,120,2,False
+7,OnePlus,8T,Fair,300,0,False
+8,Google,Pixel 5,Good,400,1,False
+9,Motorola,Moto G60,Fair,250,6,True
+10,OnePlus,Nord CE,Good,280,2,False
+11,Apple,iPhone 11,Like New,500,3,False
+12,Vivo,V21,Good,270,4,False
+13,Oppo,Reno 6,Fair,240,2,True
+14,Samsung,Galaxy M31,Good,260,3,False
+15,Realme,8 Pro,Like New,220,5,False
