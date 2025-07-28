@@ -14,3 +14,16 @@ id,brand,model,condition,price,stock,sold_directly
 13,Oppo,Reno 6,Fair,240,2,True
 14,Samsung,Galaxy M31,Good,260,3,False
 15,Realme,8 Pro,Like New,220,5,False
+16,Samsung,Galaxy S21,Good,300,10,False
+17,Apple,iPhone 12,Good,400,0,False
+18,OnePlus,OnePlus 9,Good,250,5,False
+19,Xiaomi,Mi 11,Good,150,8,False
+20,Realme,Realme X7,Good,120,2,False
+21,Nokia,3310,Good,50,1,False
+22,Samsung,Galaxy A50,Fair,130,6,False
+23,Motorola,Moto G60,Good,140,2,False
+24,Apple,iPhone SE,Good,220,0,True
+25,OnePlus,OnePlus Nord,Fair,160,7,False
+26,Xiaomi,Redmi Note 10,Good,110,4,False
+27,Realme,Narzo 30A,Fair,100,1,False
+28,Dummy,TestPhone,Good,1,5,False
