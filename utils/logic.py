@@ -32,8 +32,12 @@ def load_phones():
     return phones
 
 # Check if phone is eligible to be listed
-def is_listed(phone, platform):
-    if phone['stock'] <= 0 or phone['sold_directly']:
-        return False
+def get_listing_status(phone, platform):
+    if phone['stock'] <= 0:
+        return False, "Out of Stock"
+    if phone['sold_directly']:
+        return False, "Sold Directly"
     profit = calculate_profit(phone['price'], platform)
-    return profit > 0
+    if profit <= 0:
+        return False, "Not Profitable"
+    return True, ""
