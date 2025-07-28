@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>📱 Refurbished Phone Listings</h1>
+    <form method="GET" style="margin-bottom: 20px; text-align: center;">
+    <input type="text" name="brand" placeholder="Search by brand" style="padding: 5px;">
+    <input type="text" name="model" placeholder="Search by model" style="padding: 5px;">
+    <button type="submit" style="padding: 5px;">Filter</button>
+    <a href="/dashboard" style="margin-left: 10px;">Reset</a>
+</form>
+
     <table>
         <thead>
             <tr>
@@ -29,14 +36,15 @@
                 <td>{{ phone.stock }}</td>
                 <td>{{ phone.sold_directly }}</td>
                 {% for p in ['X', 'Y', 'Z'] %}
-                <td>
+                <td style="background-color: {% if phone.platforms[p].listed %}#d4edda{% else %}#f8d7da{% endif %};">
                     <strong>{{ p }}</strong><br>
                     Cond: {{ phone.platforms[p].mapped_condition }}<br>
-                    Profit: {{ phone.platforms[p].final_price }}<br>
+                    Profit: ${{ phone.platforms[p].final_price }}<br>
                     {% if phone.platforms[p].listed %}
                         ✅ Listed
                     {% else %}
-                        ❌ Not Listed
+                        ❌ Not Listed<br>
+                        <small>({{ phone.platforms[p].reason }})</small>
                     {% endif %}
                 </td>
                 {% endfor %}
@@ -44,5 +52,11 @@
             {% endfor %}
         </tbody>
     </table>
+    <h2>📊 Summary</h2>
+<ul>
+    <li>Platform X Listed: {{ phones | selectattr('platforms.X.listed') | select | list | length }}</li>
+    <li>Platform Y Listed: {{ phones | selectattr('platforms.Y.listed') | select | list | length }}</li>
+    <li>Platform Z Listed: {{ phones | selectattr('platforms.Z.listed') | select | list | length }}</li>
+</ul>
 </body>
 </html>
