@@ -8,11 +8,15 @@
 <body>
     <div class="login-box">
         <h2>Login</h2>
-        <form action="{{ url_for('dashboard') }}">
-            <input type="text" placeholder="Email" required><br>
-            <input type="password" placeholder="Password" required><br>
+        <form action="{{ url_for('login_post') }}" method="POST">
+            <input type="text" name="username" placeholder="Email" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
             <button type="submit">Login</button>
         </form>
+        {% if error %}
+        <p style="color: red; text-align: center;">{{ error }}</p>
+        {% endif %}
     </div>
 </body>
 </html>
+
