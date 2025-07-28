@@ -20,3 +20,8 @@ This app helps simulate a refurbished phone business listing system for 3 platfo
 ## 🚀 How to Run
 pip install flask
 python app.py
+
+---
+## Login
+user: admin
+passward: admin123
